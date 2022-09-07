@@ -1,9 +1,10 @@
 from ast import Return
 from distutils import errors
+from multiprocessing import context
 from django.shortcuts import render
 from django.shortcuts import render,get_object_or_404
 
-from .models import Band, City, UserProfile
+from .models import Band, City, UserProfile,Band
 from ProjectApp.models import Photo
 from django.contrib.auth.models import User
 from .forms import ContactForm, CreateBandForm, UserProfilForm,photoForm,AddToBandForm
@@ -191,8 +192,11 @@ def get_queryset(request):  # new
 def bands(request):
     # group_user = request.user
     # group_unique = UserProfile.objects.get(email=group_user)
+    
     bands_user = request.user.userprofile.bands.all()
     print(bands_user)
+    
+    
 
 
 
@@ -212,9 +216,25 @@ def create_band(request):
     return render(request, 'create_bands.html',{'form':form})
 
 def add_to_band(request,id):
-    user = request.user.userprofile.bands
+    
+    userprofile = request.user.userprofile
+    print(userprofile)
     profile = UserProfile.objects.get(id=id)
     print(id)
+    print(profile)
+    form = AddToBandForm(initial = {'bands': userprofile.bands.all(), 'new_member': profile})
+
+    if request.method == 'POST':
+        form = AddToBandForm(request.POST)
+
+        
+
+        if form.is_valid():
+            band = form.cleaned_data['band']
+            new_member = form.cleaned_data['new_member']
+            new_member.bands.add(*band)
+            
+            return render(request , 'bands.html',{'member':new_member})
     # band = Band.objects.get(id=id)
     # print(band)
     # we have the id of the user when we click on the buttom
@@ -223,7 +243,8 @@ def add_to_band(request,id):
     
 
 
-    form = AddToBandForm()
-    # form = AddToBandForm(initial={'bands':[request.user]})
-    # profile_band = UserProfile.objects.filter(Q(user_id=user))
-    return render(request, 'realbands.html', {'form':form , 'profile':profile})
+    # form = AddToBandForm(initial = {'bands': userprofile.bands.all(), 'new_member': profile})
+       # form = AddToBandForm(initial={'bands':[request.user]})
+    # profile_band1 = Band.objects.filter(Q(id=user))
+    # profile_band = UserProfile.objects.filter(Q(id=profile))
+    return render(request, 'add_members.html', {'form':form , 'profile':profile})

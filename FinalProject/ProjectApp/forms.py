@@ -64,3 +64,4 @@ class AddToBandForm(forms.Form):
     #     super(AddToBandForm, self).__init__(*args, **kwargs)
         # self.fields.band.queryset = user.userprofile.bands.all()
     band = forms.ModelMultipleChoiceField(queryset=Band.objects.all())
+    new_member = forms.ModelChoiceField(queryset=UserProfile.objects.all())

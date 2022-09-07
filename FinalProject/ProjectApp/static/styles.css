@@ -588,3 +588,14 @@ h3{
     font-family: 'Lobster', cursive;
     margin-bottom: 32px;
    }
+   .classfirstmember{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1em;
+    margin-bottom: 97px;
+    margin-top: 60px;
+    border: 2px solid grey;
+    height: 227px;
+    padding-top: 18px;
+    border-radius: 42px;
+   }
