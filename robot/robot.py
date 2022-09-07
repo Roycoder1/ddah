@@ -34,7 +34,7 @@ class Instabot:
         sleep(1)
         self.driver.find_element('xpath','//select [@name=\"city\"]').click()
         sleep(1)
-        self.driver.find_element('xpath','//option [@value=\"11\"]').click()
+        self.driver.find_element('xpath','//option [@value=\"145\"]').click()
         sleep(1)
 
         self.driver.find_element('xpath','//input [@name=\"countries\"]').send_keys(phone)
@@ -61,11 +61,71 @@ class Instabot:
         sleep(1)
         self.driver.find_element('xpath','//button [@type="submit"]').click()
         sleep(1)
+        self.driver.find_element('xpath','/html/body/nav/div/a').click()
+        sleep(1)
+        self.driver.find_element('xpath','//input [@name=\"searchcity\"]').send_keys(city)
+        sleep(1)
+        self.driver.find_element('xpath','//button [@type="submit"]').click()
+        sleep(1)
+        self.driver.find_element('xpath','/html/body/div[2]/div/div[1]/div[2]/label[4]').click()
+        sleep(1)
+        self.driver.find_element('xpath','/html/body/div[2]/div/div[2]/div[1]/div[2]/label[2]').click()
+        sleep(1)
+        self.driver.find_element('xpath','/html/body/div[2]/div/div[1]/div[2]/a/button').click()
+        sleep(1)
+        self.driver.find_element('xpath','//select [@name=\"band\"]').click()
+        sleep(1)
+        self.driver.find_element('xpath','/html/body/form/div/p[1]/select/option[5]').click()
+        sleep(1)
+        self.driver.find_element('xpath','//button [@type="submit"]').click()
+        sleep(1)
+        self.driver.find_element('xpath','/html/body/div[2]/div/div[1]/div[1]/span[3]').click()
+        sleep(1)
+        self.driver.find_element('xpath','/html/body/div[1]').click()
+        sleep(1)
+        
+        self.driver.find_element('xpath','/html/body/nav/a/img').click()
+        sleep(1)
+        self.driver.find_element('xpath','/html/body/nav/div/div/ul/li[2]/a').click()
+        sleep(1)
+        self.driver.find_element('xpath','//textarea [@name=\"first_name\"]').send_keys(first_name)
+        sleep(1)
+        self.driver.find_element('xpath','//textarea [@name=\"last_name\"]').send_keys(last_name)
+        sleep(1)
+        
+        self.driver.find_element('xpath','//input [@name=\"phone_number\"]').send_keys(phone)
+        sleep(1)
+        
+        self.driver.find_element('xpath','//input [@name=\"email\"]').send_keys(email)
+        sleep(1)
+        self.driver.find_element('xpath','//textarea [@name=\"subject\"]').send_keys('Ask for information')
+        sleep(1)
+        self.driver.find_element('xpath','//textarea [@name=\"message\"]').send_keys("How can i integrate a group if i'am a robot? I'm waiting for your answer ")
+        sleep(2)
+        self.driver.find_element('xpath','//button [@type="submit"]').click()
+        sleep(1)
+        # self.driver.find_element('xpath','/html/body/h1').click()
+        # sleep(1)
+        self.driver.find_element('xpath','/html/body/nav/div/div/ul/li[3]/a').click()
+        sleep(1)
+        self.driver.find_element('xpath','/html/body/nav/div/div/ul/li[3]/div/a[2]').click()
+        sleep(1)
+        self.driver.find_element('xpath','/html/body/button/a').click()
+        sleep(1)
+        
+        
+
+        
+        
+        
         
 
 
         
 
 
+        
 
-Instabot("Gaton23","Qwerty123", 'Gaston','Kornfield',25,'04/07/1997','gaston23@gmail.com','0543234867', 'Tel-Aviv')
+
+
+Instabot("Demo17","Qwerty123", 'Demo','Real',25,'04/07/1997','demo17@gmail.com','0543234867', 'JERUSALEM')
