@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="bannieregroup"></div>
+<h1 class="mb">Your music bands</h1>
+<p class="bandsdisplay"> You're members: </p>
+<div class="gi">
+{% for band in bands%}
+{{band.name }}
+ &nbsp; <br>
+
+
+
+{%endfor%}
+
+
+
+
+
+
+{% endblock %}
