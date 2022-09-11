@@ -599,3 +599,9 @@ h3{
     padding-top: 18px;
     border-radius: 42px;
    }
+   
+   @media only screen and (max-width: 600px) {
+    body {
+      background-color: beige;
+    }
+  }

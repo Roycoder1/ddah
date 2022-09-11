@@ -128,4 +128,4 @@ class Instabot:
 
 
 
-Instabot("Demo17","Qwerty123", 'Demo','Real',25,'04/07/1997','demo17@gmail.com','0543234867', 'JERUSALEM')
+Instabot("Demoday1","Qwerty123", 'Avner','Maman',34,'04/07/1997','avner12@gmail.com','0543234867', 'JERUSALEM')
